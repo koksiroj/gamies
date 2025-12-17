@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bma7q32bxknw1"]
+
+[ext_resource type="PackedScene" uid="uid://cv2g7uwhfxhxx" path="res://000-boioioing/mesh/wall.fbx" id="1_nfupg"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="wall" parent="." instance=ExtResource("1_nfupg")]
