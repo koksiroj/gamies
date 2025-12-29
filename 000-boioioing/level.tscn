@@ -1,7 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://bma7q32bxknw1"]
+[gd_scene load_steps=5 format=3 uid="uid://bma7q32bxknw1"]
 
 [ext_resource type="PackedScene" uid="uid://cv2g7uwhfxhxx" path="res://000-boioioing/mesh/wall.fbx" id="1_nfupg"]
+[ext_resource type="Texture2D" uid="uid://ddv8d8pqiqjks" path="res://000-boioioing/textures/floor.png" id="2_o1m3o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qy2uw"]
+albedo_texture = ExtResource("2_o1m3o")
+uv1_scale = Vector3(1.985, 1.985, 1.985)
+uv1_offset = Vector3(0.38, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4c1lo"]
+material = SubResource("StandardMaterial3D_qy2uw")
+size = Vector3(12.68, 0.17, 16.995)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="wall" parent="." instance=ExtResource("1_nfupg")]
+
+[node name="floor" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7644463, 0.11579466, 0.64575243)
+mesh = SubResource("BoxMesh_4c1lo")
